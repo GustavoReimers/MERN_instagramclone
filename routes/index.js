@@ -4,19 +4,19 @@ const Article = require("../models/article");
 
 router.get("/articles", function(req, res) {
   console.log("article id-->", req.query.id);
-  if (!req.query.id) {
-    Article.find(function(err, articles) {
-      res.json(articles);
-    });
-  } else {
-    Article.findById(req.query.id, function(err, article) {
-      if (!article) {
-        res.status(404).send("no result");
-      } else {
-        res.json(article);
-      }
-    });
-  }
+  // if (!req.query.id) {
+  Article.find(function(err, articles) {
+    res.json(articles);
+  });
+  // } else {
+  //   Article.findById(req.query.id, function(err, article) {
+  //     if (!article) {
+  //       res.status(404).send("no result");
+  //     } else {
+  //       res.json(article);
+  //     }
+  //   });
+  // }
 });
 
 router.post("/articles", function(req, res) {
