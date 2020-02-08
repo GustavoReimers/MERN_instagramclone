@@ -32,7 +32,7 @@ router.post("/articles", function(req, res) {
     });
 });
 
-router.patch("/articles", function(req, res) {
+router.post("/patcharticles", function(req, res) {
   Article.findByIdAndUpdate(req.query.id, req.body)
     .then(function() {
       res.json("updated successfully");
@@ -42,7 +42,7 @@ router.patch("/articles", function(req, res) {
     });
 });
 
-router.delete("/articles", function(req, res) {
+router.post("/deletearticles", function(req, res) {
   Article.findById(req.query.id, function(err, article) {
     if (!article) {
       res.status(404).send("article not found");

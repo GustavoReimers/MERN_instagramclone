@@ -23,8 +23,8 @@ function ArticleInfo(props) {
 
   async function handleDelete() {
     try {
-      const response = await axios.delete(
-        `/api/articles?id=${props.match.params._id}`
+      const response = await axios.post(
+        `/api/deletearticles?id=${props.match.params._id}`
       );
       console.log(response.data);
       props.history.push("/articles");

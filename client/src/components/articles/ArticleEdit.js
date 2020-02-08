@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { patch, get } from "axios";
+import { post } from "axios";
 
 function ArticleEdit(props) {
   const initialState = {
@@ -14,8 +14,8 @@ function ArticleEdit(props) {
     function() {
       async function getArticle() {
         try {
-          const response = await get(
-            `/api/articles?id=${props.match.params._id}`
+          const response = await post(
+            `/api/getarticles?id=${props.match.params._id}`
           );
           setArticle(response.data);
         } catch (error) {
@@ -43,8 +43,8 @@ function ArticleEdit(props) {
     if (!article.title || !article.likes) return;
     async function postArticle() {
       try {
-        const response = await patch(
-          `/api/articles?id=${article._id}`,
+        const response = await post(
+          `/api/patcharticles?id=${article._id}`,
           article
         );
         console.log("-->", response.data);
