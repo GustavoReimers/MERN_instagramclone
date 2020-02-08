@@ -11,7 +11,8 @@ const PORT = process.env.PORT || 3001;
 require("dotenv").config();
 
 mongoose.connect(process.env.MONGODB_URI, {
-  useNewUrlParser: true
+  useNewUrlParser: true,
+  useUnifiedTopology: true
 });
 mongoose.connection.once("open", function() {
   console.log("Connected to the Database.");

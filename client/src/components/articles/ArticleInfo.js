@@ -26,6 +26,7 @@ function ArticleInfo(props) {
       const response = await axios.delete(
         `/api/articles?id=${props.match.params._id}`
       );
+      console.log(response.data);
       props.history.push("/articles");
     } catch (error) {
       console.log("error", error);

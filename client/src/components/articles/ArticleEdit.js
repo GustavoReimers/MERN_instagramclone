@@ -30,7 +30,7 @@ function ArticleEdit(props) {
   function handleChange(event) {
     console.log(event.target.value);
     var checkedElement = document.getElementById("checkVideo");
-    if (checkedElement.checked == true) {
+    if (checkedElement.checked === true) {
       event.target.value = "true";
     } else {
       event.target.value = "false";
