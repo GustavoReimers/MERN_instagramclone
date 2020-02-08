@@ -108,8 +108,8 @@ function Profile() {
         </ProfileDetailsRight>
       </ProfileDetails>
       <ImagesWrapper>
-        {articles.map((item, index) => (
-          <SingleImage image={item} key={index} />
+        {articles.map(item => (
+          <SingleImage image={item} key={item.source} />
         ))}
       </ImagesWrapper>
     </ProfileContainer>
