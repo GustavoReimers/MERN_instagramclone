@@ -28,12 +28,14 @@ function ArticleEdit(props) {
   );
 
   function handleChange(event) {
-    console.log(event.target.value);
+    console.log(event.target.name);
     var checkedElement = document.getElementById("checkVideo");
-    if (checkedElement.checked === true) {
-      event.target.value = "true";
-    } else {
-      event.target.value = "false";
+    if (event.target.name === "isVideo") {
+      if (checkedElement.checked === true) {
+        event.target.value = "true";
+      } else {
+        event.target.value = "false";
+      }
     }
     setArticle({ ...article, [event.target.name]: event.target.value });
   }
