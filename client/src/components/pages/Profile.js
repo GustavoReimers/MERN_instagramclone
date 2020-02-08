@@ -69,7 +69,7 @@ function Profile() {
   useEffect(function() {
     async function getArticles() {
       try {
-        const response = await axios.get(`/api/articles`);
+        const response = await axios.post(`/api/getarticles`);
         console.log("response", response);
         setArticles(response.data);
       } catch (error) {
