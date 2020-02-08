@@ -8,8 +8,8 @@ function ArticleInfo(props) {
     function() {
       async function getArticle() {
         try {
-          const response = await axios.get(
-            `/api/articles?id=${props.match.params._id}`
+          const response = await axios.post(
+            `/api/getarticles?id=${props.match.params._id}`
           );
           setArticle(response.data);
         } catch (error) {
